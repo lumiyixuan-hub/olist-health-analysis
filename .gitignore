@@ -1,0 +1,13 @@
+# do not upload raw data
+data/raw/
+data/cleaned/
+tableau/
+
+# Python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+venv/
+
+# Mac
+.DS_Store
