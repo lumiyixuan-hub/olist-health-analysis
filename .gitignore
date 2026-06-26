@@ -1,7 +1,11 @@
-# do not upload raw data
+# Do not upload raw data
 data/raw/
 data/cleaned/
 tableau/
+
+# # Generated outputs - not tracked in version control
+reports/
+outputs/
 
 # Python
 __pycache__/
