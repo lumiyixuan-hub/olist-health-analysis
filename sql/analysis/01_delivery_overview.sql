@@ -31,6 +31,12 @@ WHERE order_status = 'delivered'
   AND delivery_delay_days IS NOT NULL;
 
 
+-- Results:
+-- total orders: 96455
+-- total delayed orders: 6533
+-- delay rate: 6.77%
+-- average delay day for delayed orders only: 10.62
+
 -- Query 2: Distribution of delay days among delayed orders
 -- Business question: Among orders that are delayed, are most of them delayed by just a few days, or is there a long tail of severely delayed orders? This tells us whether fixing delay is a "shave off a few days" problem or a structural long-haul logistics problem.
 
@@ -51,3 +57,6 @@ WHERE order_status = 'delivered'
 
 GROUP BY delivery_delay_days
 ORDER BY delivery_delay_days ASC;
+
+
+-- The distribution of delay is right-skewed. The majority of delayed orders cluster in the first few days, with counts generally tapering off as delay days increase. However, there are slight upticks in days 7 and 13. 12.63% of delayed orders were delayed by exactly 1 day, and 56.18% of delayed orders delayed within a week.
