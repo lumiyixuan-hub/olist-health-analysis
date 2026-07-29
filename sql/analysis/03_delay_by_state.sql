@@ -38,6 +38,8 @@ GROUP BY c.customer_state
 ORDER BY delay_rate_pct DESC;
 
 
+
+
 -- Query 2: Seller distribution by state
 -- Business question: Are sellers concentrated in specific states (e.g. the southeast), which would help explain why customers in distant states experience higher delay rates?
 
@@ -89,4 +91,4 @@ WHERE o.order_status = 'delivered'
 GROUP BY shipping_type
 ORDER BY delay_rate_pct DESC;
 
--- Conclusion: Sellers are heavily concentrated in São Paulo (59.74% of all sellers), while delay rates are highest in northeastern states such as Alagoas and Maranhão. Cross-state shipments show a delay rate nearly twice that of same-state shipments (8.03% vs 4.49%), with longer average delays when they do occur (11.40 vs 7.68 days). This confirms that seller concentration in the southeast, combined with the distance to customers in other regions, is a key structural driver of delivery delay - not just a correlation observed at the state level.
+-- Conclusion: Sellers are heavily concentrated in São Paulo (59.74% of all sellers), while delay rates are highest in northeastern states such as Alagoas and Maranhão. Cross-state shipments show a delay rate nearly twice that of same-state shipments (8.03% vs 4.49%), with longer average delays when they do occur (11.40 vs 7.68 days). This confirms that seller concentration in the southeast, combined with the distance to customers in other regions, is a key structural driver of delivery delay.
