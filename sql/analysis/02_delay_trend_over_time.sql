@@ -34,6 +34,8 @@ WHERE order_status = 'delivered'
 GROUP BY DATE_TRUNC('month', order_purchase_timestamp)
 ORDER BY order_month;
 
+-- Conclusion: Excluding 2016-09 and 2016-12 (each with only 1 order, statistically insignificant), delay rate shows three clear spikes above 10%: Nov 2017 (12.40%), Feb 2018 (14.13%), and Mar 2018 (18.96%), corresponding to Black Friday demand surge and the early-2018 logistics strike, with average delay days also slightly elevated (10-12 days) during these months, compared to the total average delievery delay days. Notably, Jan-Mar 2017 shows an inverse pattern: delay rate is low (2.94%-4.56%), but average delay days for delayed orders is much higher (20-25 days) than any other period, likely reflecting the platform's early-stage logistics network being less mature and order volume still relatively low (748-2546 orders per month) at this time.
+
 
 
 -- Query 2: Delay rate by day of week
@@ -149,6 +151,8 @@ WHERE order_status = 'delivered'
 GROUP BY DATE_TRUNC('month', order_purchase_timestamp)
 ORDER BY order_month;
 
+-- Conclusion: No, Olist did not set longer estimated delivery window over time.
+
 
 
 -- Query 7: Estimated delivery window vs actual delay, side by side
@@ -195,4 +199,4 @@ GROUP BY DATE_TRUNC('month', order_purchase_timestamp)
 ORDER BY order_month;
 
 
--- Conclusion: The percentage of the promised delivery window actually used stayed in a stable 30-50% range through most of 2017, but spiked to 60-70% during periods of known disruption (November 2017 Black Friday surge, early 2018 logistics strikes). This confirms that Olist's delivery system normally operates with a healthy buffer, but that buffer gets consumed rapidly under demand or supply shocks - directly explaining why delay rates spiked during those same periods.
+-- Conclusion: The percentage of the promised delivery window actually used stayed in a stable 30-50% range through most of 2017, but spiked to 60-70% during periods of known disruption (November 2017 Black Friday surge, early 2018 logistics strikes). This confirms that Olist's delivery system normally operates with a healthy buffer, but that buffer gets consumed rapidly under demand or supply shocks, directly explaining why delay rates spiked during those same periods.
