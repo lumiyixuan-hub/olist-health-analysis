@@ -37,6 +37,7 @@ WHERE order_status = 'delivered'
 -- delay rate: 6.77%
 -- average delay day for delayed orders only: 10.62
 
+
 -- Query 2: Distribution of delay days among delayed orders
 -- Business question: Among orders that are delayed, are most of them delayed by just a few days, or is there a long tail of severely delayed orders? This tells us whether fixing delay is a "shave off a few days" problem or a structural long-haul logistics problem.
 
